@@ -4,7 +4,6 @@ import Feed from './Feed';
 import Button from './Button';
 import './App.css'
 import {list} from './Translate';
-require('dotenv').config()
 
 const {Translate, ButtonClick, Error} = list;
 
@@ -25,7 +24,7 @@ class App extends Component{
     getNewsFeed(){
         const query = Translate(this.state.searchKey);
         if(query){
-            const URL = `http://newsapi.org/v2/top-headlines?country=${query}&apiKey=${process.env.REACT_APP_API_KEY}`;
+            const URL = `http://newsapi.org/v2/top-headlines?country=${query}&apiKey=5da0d05845f24c538ed4e9a587f6f032`;
             const req = new Request(URL);
             fetch(req)
             .then(response => response.json())
